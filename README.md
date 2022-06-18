@@ -3,7 +3,7 @@ An analytical model for the density profiles of self-interacting dark-matter hal
 
 - Installation
 
-`git clone https://github.com/JiangFangzhou/SIDM.git
+`git clone https://github.com/JiangFangzhou/SIDM.git`
 
 - Model overview
 
@@ -36,17 +36,27 @@ We recommend using python installations from Enthought or Conda.
 - Usage example
 
 `import config as cfg`
+
 `import profiles as pr`
+
 `import galhalo as gh`
+
 Note that the first time importing config or profiles, it can take a few seconds as the cosmological module cosmo prepares a few interpolation tables. Subsequent usage should be very fast without noticeable delay. 
 
 User inputs:
+
 `tage = 10. # [Gyr] halo age, i.e., lookback time to the formation epoch of the halo`
+
 `sigmamx = 0.5 # [cm^2/g] cross section per unit mass`
+
 `Mv = 2e12 # [M_sun] virial mass`
+
 `c = 9.7 # NFW concentration`
+
 `Mb = 6.2e10 # [M_sun] galaxy mass`
+
 `r0 = 3. # [kpc] galaxy Hernquist scale radius`
+
 
 Define the target CDM halo to operate on:
 `halo_init = pr.NFW(Mv,c,Delta=100.,z=0.)`
