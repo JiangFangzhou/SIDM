@@ -59,29 +59,37 @@ User inputs:
 
 
 Define the target CDM halo to operate on:
+
 `halo_init = pr.NFW(Mv,c,Delta=100.,z=0.)`
 
 Define the inhabitant galaxy profile: 
+
 `disk = pr.Hernquist(Mb,r0)`
 
 Compute the contracted halo:
+
 `r_grid = np.logspace(-3,3,200) # [kpc] radius grid for computing halo contraction`
+
 `halo_contra = gh.contra(r_grid,halo_init,disk)[0] `
 
+
 Compute the effective scattering radius <img src="https://render.githubusercontent.com/render/math?math=r_1">:
+
 `r1 = pr.r1(halo_contra,sigmamx=sigmamx,tage=tage)`
 
 Compute the SIDM profile:
+
 `rhodm0,v0,rho,Vc,r = pr.stitchSIDMcore(r1,halo_contra,disk)`
+
 where the rhodm0 is the central DM density, v0 the central velocity dispersion, rho and Vc the density and circular velocity profiles from the center to r1, and r the radii at which we register the profiles. 
 
 - Example scripts:
 
-test_SolveSIDMprofile_GivenCDMandBaryon.py -- a script containing the above example, and plot the SIDM profiles.
+`test_SolveSIDMprofile_GivenCDMandBaryon.py` -- a script containing the above example, and plot the SIDM profiles.
 
-test_IsothermalSolnTimeSeries.py -- compute the solutions on halo age time series, emulating what would be achieved with a gravothermal fluid evolution
+`test_IsothermalSolnTimeSeries.py` -- compute the solutions on halo age time series, emulating what would be achieved with a gravothermal fluid evolution
 
-compare_GCthreshold_DifferentCrossSectionAndConcentration.py -- a plotting program that takes the outputs of `test_IsothermalSolnTimeSeries.py` as inputs, and plots the threshold of gravothermal-core-collapse in the space of galaxy mass fraction versus galaxy compactness <img src="https://render.githubusercontent.com/render/math?math=M_\mathrm{b}/M_\mathrm{vir}-r_\mathrm{1/2}/M_\mathrm{vir}">
+`compare_GCthreshold_DifferentCrossSectionAndConcentration.py` -- a plotting program that takes the outputs of `test_IsothermalSolnTimeSeries.py` as inputs, and plots the threshold of gravothermal-core-collapse in the space of galaxy mass fraction versus galaxy compactness <img src="https://render.githubusercontent.com/render/math?math=M_\mathrm{b}/M_\mathrm{vir}-r_\mathrm{1/2}/M_\mathrm{vir}">
 
 The modules have detailed docstrings, and the example programs are designed 
 to be self-explanatory. Please feel free to contact the author Fangzhou Jiang (fzjiang@caltech.edu, fjiang@carnegiescience.edu) for questions.
