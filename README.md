@@ -12,6 +12,7 @@ This model combines the isothermal Jeans model and the model of adiabatic halo c
 - Workflow of the model
 
 <img src="https://render.githubusercontent.com/render/math?math=M_\mathrm{vir}">
+<img src="https://render.githubusercontent.com/render/math?math=c">
 
 (1) Given a CDM halo described by an NFW profile (i.e., with known virial mass <img src="https://render.githubusercontent.com/render/math?math=M_\mathrm{vir}">, concentration <img src="https://render.githubusercontent.com/render/math?math=c">, and age <img src="https://render.githubusercontent.com/render/math?math=t_\mathrm{age}">), and given an inhabitant galaxy described by a Hernquist profile (parameterized by the mass <img src="https://render.githubusercontent.com/render/math?math=M_\mathrm{b}"> and scale size <img src="https://render.githubusercontent.com/render/math?math=r_0">), compute the adiabatically contracted halo profile.
 
