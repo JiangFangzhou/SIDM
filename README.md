@@ -12,7 +12,9 @@ This model combines the isothermal Jeans model and the model of adiabatic halo c
 - Workflow of the model
 
 (1)  Given a CDM halo described by an NFW profile (i.e., with known virial mass <img src="https://render.githubusercontent.com/render/math?math=M_\mathrm{vir}"> , concentration <img src="https://render.githubusercontent.com/render/math?math=c">, and age <img src="https://render.githubusercontent.com/render/math?math=t_\mathrm{age}"> ), and given an inhabitant galaxy described by a Hernquist profile (parameterized by the mass <img src="https://render.githubusercontent.com/render/math?math=M_\mathrm{b}">  and scale size <img src="https://render.githubusercontent.com/render/math?math=r_0">), compute the adiabatically contracted halo profile.
+
 (2)  Given the self-interaction cross-section, <img src="https://render.githubusercontent.com/render/math?math=\sigma_m"> , solve for the radius of frequent scattering, <img src="https://render.githubusercontent.com/render/math?math=r_1"> , using the density profile and velocity-dispersion profile of the contracted CDM halo. 
+
 (3)  Integrate the spherical Jeans-Poisson equation to obtain an isothermal core profile -- do this iteratively to find the central DM density <img src="https://render.githubusercontent.com/render/math?math=\rho_\mathrm{0}">  and the central velocity dispersion <img src="https://render.githubusercontent.com/render/math?math=v_\mathrm{0}">  by minimizing the relative stitching error at <img src="https://render.githubusercontent.com/render/math?math=r_1">.
 
 - Modules
