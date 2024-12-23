@@ -1,0 +1,10 @@
+CosmoloPy
+fast_histogram
+numpy
+scipy
+lmfit
+pytest
+flake8
+numba
+scikit-learn
+pyhipp

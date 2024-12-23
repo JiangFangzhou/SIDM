@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sidm"
+version = "0.0.1"
+authors = [
+  { name="Fangzhou Jiang", email="fangzhou.jiang@gmail.com" },
+]
+description = "Analytical model for the density profiles of self-interacting dark-matter halos with inhabitant galaxies"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "fast-histogram", "CosmoloPy", "lmfit", "pytest", "flake8", "numba", 
+    "scikit-learn", "pyhipp"
+]
+
+[project.urls]
+Repository = "https://github.com/JiangFangzhou/SIDM.git"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  ".", "src"
+]
