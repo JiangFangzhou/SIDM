@@ -20,22 +20,26 @@ repo_root/
         all test_ files.
 ```
 
-Run tests:
 
-```bash
-python -m pytest -s tests
-```
+
+
 
 ## For developers
 
-Yangyao has put his implementation under `src/sidm/yangyao/`. This is only for 
-a reference, and shall be completely refactored and merged into the main
-implementation.
+Yangyao has put his implementation under `src/sidm/yangyao/`. 
+This is only for a reference, and shall be completely refactored and merged 
+into the main implementation.
 
 Some examples can be found under `docs/examples_yangyao.ipynb`.
 
 Install dependencies:
 ```bash
-python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
+
+Run tests:
+
+```bash
+python -m pytest -s tests
+```
+This is automatically run on push & pull request in Github.
