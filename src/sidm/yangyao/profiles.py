@@ -164,6 +164,14 @@ class SphSymmProfile(HasDictRepr):
     @property
     def lr_max(self):
         return self._impl._lr_max
+    
+    @property
+    def lr_nodes(self):
+        return self._impl._lr_nodes
+    
+    @property
+    def lr_cents(self):
+        return self._impl._lr_cents
 
     @property
     def M_total(self):
@@ -172,6 +180,12 @@ class SphSymmProfile(HasDictRepr):
     @property
     def ctx(self):
         return Context(self._impl._ctx)
+    
+    def M_encs(self, lrs: np.ndarray):
+        return self._impl.M_encs(lrs)
+    
+    def rhos(self, lrs: np.ndarray):
+        return self._impl.rhos(lrs)
 
     @classmethod
     def from_bins(cls, lr_nodes: np.ndarray, dMs: np.ndarray,
@@ -262,7 +276,7 @@ class SphSymmObj(HasDictRepr):
         Vc_sqs = G * cMs / rs
         return RotCurve.from_bins(lrs, Vc_sqs, self.ctx)
 
-    def replaced(self, **init_kws):
+    def replaced(self, **init_kws) -> Self:
         raise NotImplementedError('Not implemented yet.')
 
 
