@@ -228,7 +228,8 @@ class StitchedHalo(Halo):
         guess = np.log10(sigma_r1), np.log10(rho_0_lo)
         opts = {'maxiter': ctx.optim_max_iter}
         sol = minimize(
-            loss, guess, bounds=bounds, options=opts)
+            loss, guess, bounds=bounds, options=opts,
+            method='Nelder-Mead')
         sigma_0, rho_0 = 10.0**sol.x
         iso_core.solve(sigma_0, rho_0)
 
